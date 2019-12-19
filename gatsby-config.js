@@ -29,6 +29,12 @@ module.exports = {
         plugins: [
           "gatsby-remark-prismjs",
           {
+            resolve: "gatsby-remark-images",
+            options: {
+              showCaptions: true,
+            }
+          },
+          {
             resolve: "gatsby-remark-external-links",
             options: {
               rel: "noopener",
