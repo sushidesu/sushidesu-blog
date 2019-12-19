@@ -28,12 +28,7 @@ module.exports = {
       options: {
         plugins: [
           "gatsby-remark-prismjs",
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              showCaptions: true,
-            }
-          },
+          "gatsby-remark-images",
           {
             resolve: "gatsby-remark-external-links",
             options: {
