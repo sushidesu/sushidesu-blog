@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { colors, length, mediaQuery } from "../styles/GlobalStyle"
 import { FaRegCalendarAlt } from "react-icons/fa"
 
+import CoverImage from "./coverImage"
+
 const Article = styled.article`
   position: relative;
   padding: 18px;
@@ -31,7 +33,7 @@ const StyledLink = styled(props => <Link {...props} />)`
   }
 `
 
-const Image = styled.div`
+const ImageBox = styled.div`
   width: 68px;
   height: 68px;
   flex-shrink: 0;
@@ -100,7 +102,9 @@ const Content = styled.div`
 export default props => {
   return (
     <Article isHidden={props.isHidden}>
-      <Image />
+      <ImageBox>
+        <CoverImage filename={"cover"} />
+      </ImageBox>
       <Content>
         <h2 className={"cardtitle"}>
           <StyledLink to={props.slug}>{props.title}</StyledLink>
