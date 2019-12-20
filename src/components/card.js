@@ -37,7 +37,6 @@ const ImageBox = styled.div`
   width: 68px;
   height: 68px;
   flex-shrink: 0;
-  background-color: ${colors.mainLight};
   border-radius: ${length.radius};
   margin-right: ${length.marginSmall};
   @media screen and (min-width: ${mediaQuery.large}) {
@@ -103,7 +102,7 @@ export default props => {
   return (
     <Article isHidden={props.isHidden}>
       <ImageBox>
-        <CoverImage filename={"cover"} />
+        <CoverImage dirname={props.dirname} />
       </ImageBox>
       <Content>
         <h2 className={"cardtitle"}>

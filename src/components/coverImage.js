@@ -2,13 +2,15 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-export default ({ filename }) => {
+import { colors } from "../styles/GlobalStyle"
+
+export default ({ dirname }) => {
   const data = useStaticQuery(graphql`
     query {
-      images: allFile {
+      images: allFile(filter: {name: {eq: "cover"}}) {
         edges {
           node {
-            relativePath
+            relativeDirectory
             name
             childImageSharp {
               sizes(maxWidth: 86) {
@@ -22,11 +24,18 @@ export default ({ filename }) => {
   `)
   
   const image = data.images.edges.find(({ node }) =>
-    node.relativePath.includes(filename)
+    `/${node.relativeDirectory}/` === dirname
   )
   if (image) {
-    return <Img sizes={image.node.childImageSharp.sizes} />
+    return <Img style={{
+      borderRadius: "inherit"
+    }} sizes={image.node.childImageSharp.sizes} />
   } else {
-    return null
+    return <div style={{
+      width: "inherit",
+      height: "inherit",
+      borderRadius: "inherit",
+      backgroundColor: colors.mainLight
+    }}></div>
   }
 }
