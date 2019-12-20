@@ -6,7 +6,7 @@ import styled from "styled-components"
 import Header from "./header"
 import SideMenu from "./sideMenu"
 import Foooter from "./foooter"
-import { colors, length, mediaQuery } from "../styles/GlobalStyle"
+import GlobalStyle, { colors, length, mediaQuery } from "../styles/GlobalStyle"
 
 const Container = styled.div`
   display: flex;
@@ -105,6 +105,8 @@ const Layout = ({ children }) => {
       <div className={"footer"}>
         <Foooter />
       </div>
+
+      <GlobalStyle />
     </Container>
   )
 }

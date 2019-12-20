@@ -1,3 +1,5 @@
+ import { css, createGlobalStyle } from "styled-components"
+
 // color settings
 export const colors = {}
 
@@ -34,3 +36,28 @@ export const mediaQuery = {}
 mediaQuery.small = "768px"
 mediaQuery.medium = ""
 mediaQuery.large = "1024px"
+
+const font = css`
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+    Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3",
+    Meiryo, 'メイリオ', "Noto Sans Japanese", sans-serif;
+  color: ${colors.black};
+`
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    ${font}
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: ${colors.white};
+  }
+`
+
+export default GlobalStyle
