@@ -20,6 +20,7 @@ const IndexPage = ({ data }) => {
             key={node.id}
             isHidden={i >= current}
             slug={`/${node.frontmatter.slug}/`}
+            dirname={node.fields.slug}
             title={node.frontmatter.title}
             image={node.frontmatter.image}
             excerpt={node.excerpt}
@@ -58,6 +59,9 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           excerpt(truncate: true, pruneLength: 64)
           frontmatter {
             title
