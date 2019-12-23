@@ -11,9 +11,7 @@ const Article = styled.article`
   padding: 18px;
   display: flex;
   flex-direction: row;
-  &:not(:first-of-type) {
-    border-top: 2px solid ${colors.whiteDark};
-  }
+  border-top: 2px solid ${colors.whiteDark};
   ${({ isHidden }) =>
     isHidden &&
     `
