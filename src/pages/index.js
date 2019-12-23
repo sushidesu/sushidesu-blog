@@ -1,10 +1,29 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
+import { FaDog } from "react-icons/fa"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Card from "../components/card"
 import { LoadMore } from "../components/modules"
+import { colors } from "../styles/GlobalStyle" 
+
+const SubTitle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+  font-size: 1em;
+  font-weight: bold;
+  span {
+    color: ${colors.gray};
+  }
+  .icon {
+    margin-right: 6px;
+    color: ${colors.sub};
+  }
+`
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
@@ -14,6 +33,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
+      <SubTitle><FaDog className={"icon"} /><span>新着記事</span></SubTitle>
       {posts.map(({ node }, i) => {
         return (
           <Card
