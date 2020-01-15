@@ -31,11 +31,11 @@ const SideMenu = () => {
   return (
     <Aside>
       <div className={"wrapper"}>
-        <h3>カテゴリー</h3>
+        <h2>カテゴリー</h2>
         <Categories categories={categories} />
       </div>
       <div className={"wrapper"}>
-        <h3>タグ</h3>
+        <h2>タグ</h2>
         <Tags tags={tags} />
       </div>
     </Aside>
@@ -51,7 +51,8 @@ const Aside = styled.aside`
       border-top: 2px solid ${colors.whiteDark};
     }
 
-    h3 {
+    h2 {
+      font-size: 1.17em;
       margin: 0 0 16px 0;
     }
   }
