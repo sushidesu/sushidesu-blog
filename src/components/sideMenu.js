@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { colors, length } from "../styles/GlobalStyle"
 
+import Profile from "./profile"
 import { Categories, Tags } from "./modules"
 
 const SideMenu = () => {
@@ -31,11 +32,15 @@ const SideMenu = () => {
   return (
     <Aside>
       <div className={"wrapper"}>
-        <h3>カテゴリー</h3>
+        <h2>プロフィール</h2>
+        <Profile />
+      </div>
+      <div className={"wrapper"}>
+        <h2>カテゴリー</h2>
         <Categories categories={categories} />
       </div>
       <div className={"wrapper"}>
-        <h3>タグ</h3>
+        <h2>タグ</h2>
         <Tags tags={tags} />
       </div>
     </Aside>
@@ -51,7 +56,8 @@ const Aside = styled.aside`
       border-top: 2px solid ${colors.whiteDark};
     }
 
-    h3 {
+    h2 {
+      font-size: 1.17em;
       margin: 0 0 16px 0;
     }
   }
